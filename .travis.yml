@@ -1,18 +1,15 @@
 language: python
-
-#which versions of python to test against
 python:
-  - "2.7"
-  - "3.3"
-
-# command to install dependencies
+- '2.7'
+- '3.3'
 install:
-  - pip install codecov
-  - pip install coverage
-
-script: 
-  - python -m unittest discover -v ./ci_play/ # command to run unit test
-  - coverage run ./ci_play/test.py # command to run code coverage
-#can do additional things, say send out reports, which we will discuss next time
+- pip install codecov
+- pip install coverage
+script:
+- python -m unittest discover -v ./ci_play/
+- coverage run ./ci_play/test.py
 after_success:
- - codecov
+- codecov
+before_install:
+- openssl aes-256-cbc -K $encrypted_3e0bff1a2c53_key -iv $encrypted_3e0bff1a2c53_iv
+  -in deploy_rsa.enc -out deploy_rsa -d
