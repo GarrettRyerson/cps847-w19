@@ -36,3 +36,4 @@ deploy:
      ${DEPLOY_USER}@${DEPLOY_SERVER}:/home/${DEPLOY_USER}
   on:
     branch: master
+
