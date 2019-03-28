@@ -38,6 +38,11 @@ export class UserComponent implements OnInit {
       this.showSkills = false;
     }
   }
+
+  addSkill(newSkill){
+    console.log(newSkill);
+    this.skills.push(newSkill);
+  }
 }
 
 interface Address {
