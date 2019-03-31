@@ -7,8 +7,21 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  items: any[];
 
+  constructor(public navCtrl: NavController) {
+    this.items = [];
+    //populate a list of items with dummy records
+    for(let i = 0; i < 10; i++){
+      this.items.push({
+        text: 'Item' + i,
+        id: i
+      })
+    }
+  }
+
+  itemSelected(item){
+    alert('This is ' + item.text);
   }
 
 }
